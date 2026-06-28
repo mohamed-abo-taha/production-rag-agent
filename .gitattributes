@@ -1,0 +1,8 @@
+# Normalize line endings across platforms.
+* text=auto eol=lf
+
+# The corpus is fetched Wikipedia data, not hand-written source.
+# Mark it generated so GitHub's language stats reflect the actual code (Python).
+data/corpus/** linguist-generated=true
+docs/*.svg linguist-documentation=true
+*.jsonl linguist-generated=true
