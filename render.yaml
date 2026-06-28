@@ -1,0 +1,26 @@
+# Render.com blueprint — one-click deploy of the Streamlit demo.
+# Docs: https://render.com/docs/blueprint-spec
+#
+# IMPORTANT: the embedding + reranker models (PyTorch) need ~2 GB RAM, so the free 512 MB
+# instance will OOM. Use the "starter" plan (or run the lighter-corpus build — see DEPLOY.md).
+
+services:
+  - type: web
+    name: rag-agent
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    dockerCommand: streamlit run streamlit_app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
+    healthCheckPath: /_stcore/health
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false                      # set this in the Render dashboard (do not commit it)
+      - key: LLM_PROVIDER
+        value: groq
+      - key: GROQ_ANSWER_MODEL
+        value: llama-3.1-8b-instant
+      - key: HF_HUB_DISABLE_SYMLINKS_WARNING
+        value: "1"
+      # Optional: point at Qdrant Cloud instead of the on-disk index baked into the image.
+      # - key: QDRANT_URL
+      #   sync: false

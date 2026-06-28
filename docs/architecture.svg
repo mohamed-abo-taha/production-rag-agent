@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 620" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#5b6370"/>
+    </marker>
+    <style>
+      .box{fill:#ffffff;stroke:#c7cdd6;stroke-width:1.5;rx:10}
+      .title{font-size:15px;font-weight:700;fill:#1f2430}
+      .sub{font-size:12px;fill:#5b6370}
+      .grp{fill:#f5f7fa;stroke:#dfe4ea;stroke-width:1.5;rx:12}
+      .grplabel{font-size:12px;font-weight:700;fill:#8a93a2;letter-spacing:1px}
+      .edge{stroke:#5b6370;stroke-width:1.6;fill:none;marker-end:url(#arrow)}
+      .accent{fill:#eef4ff;stroke:#6b9bff}
+      .warn{fill:#fff4ec;stroke:#ffae73}
+      .ok{fill:#eefaf0;stroke:#73c98a}
+    </style>
+  </defs>
+
+  <text x="24" y="34" font-size="20" font-weight="700" fill="#1f2430">Production RAG Agent — Architecture</text>
+  <text x="24" y="56" class="sub">Hybrid retrieval · cross-encoder reranking · self-correcting agent · grounded citations · automated eval gate</text>
+
+  <!-- Request -->
+  <rect class="box accent" x="24" y="90" width="150" height="60" rx="10"/>
+  <text x="99" y="116" class="title" text-anchor="middle">Client</text>
+  <text x="99" y="136" class="sub" text-anchor="middle">POST /ask · UI</text>
+
+  <!-- Agent group -->
+  <rect class="grp" x="210" y="78" width="520" height="360" rx="12"/>
+  <text x="230" y="100" class="grplabel">AGENT LOOP  (src/agent.py)</text>
+
+  <!-- cache -->
+  <rect class="box" x="230" y="116" width="220" height="56" rx="10"/>
+  <text x="340" y="139" class="title" text-anchor="middle">1 · Semantic cache</text>
+  <text x="340" y="158" class="sub" text-anchor="middle">hit → return cached answer</text>
+
+  <!-- retrieval subgroup -->
+  <rect class="grp" x="230" y="186" width="470" height="150" rx="12" fill="#eef2f8"/>
+  <text x="246" y="206" class="grplabel">2 · HYBRID RETRIEVAL  (src/retrieval.py)</text>
+  <rect class="box" x="246" y="216" width="150" height="52" rx="10"/>
+  <text x="321" y="238" class="title" text-anchor="middle" font-size="13">Dense / kNN</text>
+  <text x="321" y="256" class="sub" text-anchor="middle">Qdrant</text>
+  <rect class="box" x="410" y="216" width="150" height="52" rx="10"/>
+  <text x="485" y="238" class="title" text-anchor="middle" font-size="13">BM25 sparse</text>
+  <text x="485" y="256" class="sub" text-anchor="middle">rank_bm25</text>
+  <rect class="box" x="574" y="216" width="110" height="52" rx="10"/>
+  <text x="629" y="238" class="title" text-anchor="middle" font-size="12">fuse</text>
+  <text x="629" y="256" class="sub" text-anchor="middle">dedupe</text>
+  <rect class="box accent" x="330" y="282" width="270" height="44" rx="10"/>
+  <text x="465" y="309" class="title" text-anchor="middle" font-size="13">Cross-encoder rerank → top-k</text>
+
+  <!-- self-correct -->
+  <rect class="box warn" x="230" y="350" width="220" height="56" rx="10"/>
+  <text x="340" y="373" class="title" text-anchor="middle" font-size="13">3 · Weak context?</text>
+  <text x="340" y="392" class="sub" text-anchor="middle">rewrite query · retrieve again</text>
+
+  <!-- generate -->
+  <rect class="box ok" x="470" y="350" width="240" height="56" rx="10"/>
+  <text x="590" y="372" class="title" text-anchor="middle" font-size="13">4 · Generate (Groq / Claude)</text>
+  <text x="590" y="391" class="sub" text-anchor="middle">grounded + cited · or abstain</text>
+
+  <!-- LLM provider -->
+  <rect class="box" x="770" y="116" width="180" height="86" rx="10"/>
+  <text x="860" y="142" class="title" text-anchor="middle" font-size="14">LLM provider</text>
+  <text x="860" y="164" class="sub" text-anchor="middle">Groq · Llama</text>
+  <text x="860" y="182" class="sub" text-anchor="middle">or Anthropic · Claude</text>
+
+  <!-- Observability -->
+  <rect class="box" x="770" y="232" width="180" height="86" rx="10"/>
+  <text x="860" y="258" class="title" text-anchor="middle" font-size="14">Observability</text>
+  <text x="860" y="280" class="sub" text-anchor="middle">p50/p95/p99 · cost</text>
+  <text x="860" y="298" class="sub" text-anchor="middle">cache · abstention</text>
+
+  <!-- Eval -->
+  <rect class="grp" x="24" y="478" width="926" height="118" rx="12" fill="#fbf7ff" stroke="#e3d4f5"/>
+  <text x="44" y="500" class="grplabel">OFFLINE / CI</text>
+  <rect class="box" x="44" y="512" width="280" height="66" rx="10"/>
+  <text x="184" y="538" class="title" text-anchor="middle" font-size="13">Answer eval — LLM-as-judge</text>
+  <text x="184" y="558" class="sub" text-anchor="middle">faithfulness · relevance · correctness · abstain</text>
+  <rect class="box" x="340" y="512" width="300" height="66" rx="10"/>
+  <text x="490" y="538" class="title" text-anchor="middle" font-size="13">Retrieval eval — IR metrics</text>
+  <text x="490" y="558" class="sub" text-anchor="middle">recall@k · NDCG@k · A/B of strategies</text>
+  <rect class="box ok" x="656" y="512" width="280" height="66" rx="10"/>
+  <text x="796" y="538" class="title" text-anchor="middle" font-size="13">CI quality gate</text>
+  <text x="796" y="558" class="sub" text-anchor="middle">blocks merge on regression</text>
+
+  <!-- edges -->
+  <path class="edge" d="M174,120 L226,120"/>
+  <path class="edge" d="M340,172 L340,186"/>
+  <path class="edge" d="M340,336 L340,350"/>
+  <path class="edge" d="M450,378 L470,378"/>
+  <path class="edge" d="M712,120 L766,120"/>
+  <path class="edge" d="M711,372 C740,372 860,330 860,322"/>
+  <path class="edge" d="M590,406 C590,440 860,430 860,406" opacity="0"/>
+  <path class="edge" d="M465,438 L465,478"/>
+</svg>

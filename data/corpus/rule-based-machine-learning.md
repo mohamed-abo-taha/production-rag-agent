@@ -1,0 +1,25 @@
+# Rule-based machine learning
+
+Source: Wikipedia (https://en.wikipedia.org/wiki/Rule-based_machine_learning)
+
+Rule-based machine learning (RBML) is a term in computer science intended to encompass any machine learning method that identifies, learns, or evolves 'rules' to store, manipulate or apply. The defining characteristic of a rule-based machine learner is the identification and utilization of a set of relational rules that collectively represent the knowledge captured by the system.
+Rule-based machine learning approaches include knowledge extraction, learning classifier systems, association rule learning, artificial immune systems, and any other method that relies on a set of rules, each covering contextual knowledge.
+While rule-based machine learning is conceptually a type of rule-based system, it is distinct from traditional rule-based systems, which are often hand-crafted, and other rule-based decision makers. This is because rule-based machine learning applies some form of learning algorithm such as Rough sets theory to identify and minimise the set of features and to automatically identify useful rules, rather than a human needing to apply prior domain knowledge to manually construct rules and curate a rule set.
+
+
+== Rules ==
+The output of rule-based machine learning consists of decision rules, which typically take the form of an '{IF:THEN} expression', (e.g. {IF 'condition' THEN 'result'}, or as a more specific example, {IF 'red' AND 'octagon' THEN 'stop-sign}). An individual decision rule is not in itself a model, since the rule is only applicable when its condition is satisfied. Therefore rule-based machine learning methods typically comprise a set of rules, or knowledge base, that collectively make up the prediction model usually known as decision algorithm. Rules can also be interpreted in various ways depending on the domain knowledge, data types(discrete or continuous) and in combinations.
+
+
+== RIPPER ==
+Repeated incremental pruning to produce error reduction (RIPPER) is a propositional rule learner proposed by William W. Cohen as an optimized version of IREP.
+
+
+== R.ROSETTA ==
+R.ROSETTA is an implementation of rough set theory framework that gathers combinatorial statistics and provides results in the form of IF-THEN classification rules. For example, IF Gene A = elevated and Gene B = suppressed THEN decision = Cancer. These rules are generated through Boolean reasoning, where the IF part consists of conjuncts, referred to as descriptors (predecessors or left-hand side), and the THEN part represents the decision (successor or right-hand side).
+
+
+== See also ==
+
+
+== References ==

@@ -1,0 +1,78 @@
+# Artificial intelligence in education
+
+Source: Wikipedia (https://en.wikipedia.org/wiki/Artificial_intelligence_in_education)
+
+Artificial intelligence in education (often abbreviated as AIEd) is a subfield of educational technology that studies how to use artificial intelligence to create learning environments.
+Considerations in the field include data-driven decision-making, AI ethics, data privacy and AI literacy. Concerns include the potential for cheating, over-reliance, equity of access, reduced critical thinking, and the perpetuation of misinformation and bias.
+
+
+== History ==
+Efforts to integrate AI into educational contexts have often followed technological advancement in the history of artificial intelligence.
+In the 1960s, educators and researchers began developing computer-based instruction systems, such as PLATO, developed by the University of Illinois.
+In the 1970s and 1980s, intelligent tutoring systems (ITS) were being adapted for classroom instruction.
+The International Artificial Intelligence in Education Society was founded in 1993.
+Coinciding with the AI boom of the 2020s, the use of large language models in the global north has been promoted and funded by venture capital and big tech. Companies creating AI services have targeted students and educational institutions as customers. Similarly, pre-AI boom educational companies have expanded their use of AI technologies. These commercial incentives for AIEd use may be related to a potential AI bubble. In the U.S., bipartisan support of AI development in K-12 education has been expressed, but specific implementations and best practices remain contentious.
+
+
+== Theory ==
+AIEd applies theory from education studies, machine learning, and related fields.
+A 2019 review of the previous decade of studies found that most research prioritized technological design over pedagogical integration.
+Ouyang and Jiao (2021) propose three paradigms for AI in education, which follow roughly from least to most learner-centered and from requiring least to most technical complexity from the AI systems:
+
+AI-directed, learner-as-recipient: AIEd systems present a pre-set curriculum based on statistical patterns that do not adjust to learner's feedback.
+AI-supported, learner-as-collaborator: Systems that incorporate responsiveness to learner's feedback through, for example, natural language processing, wherein AI can support knowledge construction.
+AI-empowered, learner-as-leader: This model seeks to position AI as a supplement to human intelligence wherein learners take agency and AI provides consistent and actionable feedback.
+Some scholars place AI in education within a socio-technical framework. This positions AI alongside other emerging educational technologies, such as computing, the internet, and social media.
+The framework of Tsao, Heinrichs and Camit (2025) draws on new materialism and posthumanism, specifically Donna Haraway's concept of sympoiesis (making-with). This perspective views learning as an entanglement of human and non-human actors (students, teachers, and AI algorithms), where knowledge is co-composed in contact zones between human context and algorithmic prediction.
+AI agents have been trained on biased datasets, and thus continue to perpetuate societal biases. Since LLMs were created to produce human-like text, algorithmic bias can be introduced and reproduced. AI's data processing and monitoring reinforce neoliberal approaches to education rather than addressing inequalities.
+
+
+== Applications ==
+
+
+=== Educators ===
+Uses of generative AI chatbots in education have included assessment and feedback, machine translations, proof-reading exam question generation and copy editing, or as virtual assistants.
+Emotional AI in education is the study and development of systems that can detect learners' emotions or provide emotional support in learning.
+
+
+=== Students ===
+A global survey from 2024 found that students primarily use generative AI for brainstorming, summarization, and research assistance, finding it effective for simplifying complex information but less reliable for factual accuracy and classroom learning. While students recognized its potential to enhance AI literacy and digital communication, professors highlighted significant limitations in critical thinking, interpersonal communication, and decision-making skills. In 2025, student perceptions of ChatGPT were generally positive, with many finding it to be an effective tool for learning, productivity, and problem-solving. In a global study, approximately 58% of students reported finding the AI tool useful in their daily lives. The study also highlighted that ChatGPT was particularly beneficial in blended learning environments, where a significant portion of learning is conducted online. Although the majority of students still expressed a preference for in-person assistance over AI, they acknowledged the value of ChatGPT as a helpful resource, especially when in-person support was unavailable.
+
+
+== Usage ==
+
+
+=== Schools and educators ===
+Following the release of ChatGPT in November 2022, some schools and large school districts blocked access to the site and issued warnings that the use of such tools would be seen as cheating.
+Governmental and non-governmental organizations such as UNESCO, Article 4 of the European Union's AI Act, and the U.S. Department of Education have published reports advocating for specific AIEd approaches. National higher-education bodies have also published guidance on generative AI, including Ireland's Higher Education Authority, which issued a policy framework for higher education teaching and learning in December 2025. In 2024, UNESCO released updated global guidance for generative AI in education, emphasizing ethical use, teacher training, and data protection to ensure responsible integration of AI tools in learning environments. According to Taso (2025), policy implementation in higher education is interpreted and enacted differently by various organizations. These decentralized policies can lead to inconsistent enforcement and confusion among students regarding what constitutes acceptable use, with the burden of ethical navigation falling on individual teachers and students.
+AI integration in classrooms has created new forms of invisible labour for educators, who must navigate ambiguous policies, redesign assessments to be AI-resilient, and adjudicate potential academic integrity violations. The use of AI detection tools has also been criticised for creating an adversarial relationship between students and institutions, where students may be falsely accused of misconduct based on probabilistic software.
+AIEd advocates say that efforts should be made towards increasing global accessibility and training educators to serve underprivileged areas.
+According to NPR in a poll conducted with Ipsos in 2026, of 545 K-12 educators in the US, "nearly 3-in-4 believe AI has bigger implications for education than past innovations like the internet or computers." Around half of educators said they had used AI for work tasks. More than half said that students did not use AI in the classroom at all. Around half said it interfered with students ability to learn critical thinking skills, and that it was a shortcut for students to avoid work. Almost 80% of respondents said that schools should include teaching responsible AI usage as part of their curricula.
+
+
+=== Students ===
+Reliance on generative AI has been linked with reduced academic self-esteem and performance, and heightened learned helplessness. Algorithm errors and hallucinations are common flaws in AI agents, making them less trustworthy and reliable.
+According to a 2025 survey from Inside Higher Ed, 85% of higher education students use generative AI technology in some way, with 25% using AI to complete assignments for them. The most common reason cited for using AI to cheat was pressure to get high grades. 97% of students wanted some form of action from schools on the threat to academic integrity caused by AI, with the most popular options being clearer policies and more education about ethical uses of AI.
+In September 2025, The Atlantic published an op-ed from a high school senior arguing that the normalization of AI cheating was eroding critical thinking, academic integrity, creativity, and the shared student experience.
+
+
+== Bans ==
+
+Some educational institutions have chosen to ban access to generative AI, citing concerns about plagiarism and hallucinations. Access to ChatGPT was blocked by the Los Angeles Unified School District less than a month after the tool's official release, with the New York City Department of Education following suit in January 2023.
+
+
+=== Repeals ===
+For the 2023–24 school year, some school districts announced a repeal of their bans of ChatGPT, citing the potential benefits of AI in the classroom for both students and educators, with a focus on how to use it effectively and ethically. In May 2023, New York City repealed its ban on ChatGPT.
+
+
+== See also ==
+ChatGPT in education
+Computational education
+Computing education
+Computers in the classroom
+Digital divide
+List of chatbots
+List of free educational software
+
+
+== References ==

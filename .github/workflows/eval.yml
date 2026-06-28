@@ -1,0 +1,61 @@
+name: ci
+
+# Two-stage quality gate:
+#   1. unit tests (no API key) run on every push/PR.
+#   2. the LLM eval harness runs when an ANTHROPIC_API_KEY secret is configured, and BLOCKS
+#      the merge if faithfulness / correctness / recall fall below the thresholds in evaluate.py.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Unit tests (no API key needed)
+        run: pytest -q -m "not integration"
+      - name: Build index from committed corpus
+        run: python -m scripts.run_ingest
+      - name: Retrieval benchmark (LLM-free — no secrets needed)
+        run: python -m eval.retrieval_eval --max-doc-queries 100
+      - name: Upload retrieval report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: retrieval-report
+          path: eval/retrieval_report.json
+
+  eval-gate:
+    runs-on: ubuntu-latest
+    needs: test
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Ingest corpus
+        run: python -m scripts.run_ingest
+      - name: Run eval quality gate
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "No ANTHROPIC_API_KEY secret set — skipping LLM eval gate."
+            exit 0
+          fi
+          python -m eval.evaluate
+      - name: Upload eval report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-report
+          path: eval/report.json

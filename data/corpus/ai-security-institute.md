@@ -1,0 +1,20 @@
+# AI Security Institute
+
+Source: Wikipedia (https://en.wikipedia.org/wiki/AI_Security_Institute)
+
+The AI Security Institute (AISI) is a research organisation under the Department for Science, Innovation and Technology of the United Kingdom that aims "to equip governments with a scientific understanding of the risks posed by advanced AI". It conducts research and develop and test mitigations. Previously, it was known as the AI Safety Institute. Its creation followed world's first major AI Safety Summit that was held in Bletchley Park in 2023. The institute's professed goal is "building the world's leading understanding of advanced AI risks and solutions, to inform governments so they can keep the public safe". It is designed like a startup in the government "combining the authority of government with the expertise and agility of the private sector".
+AISI has made access agreements with Anthropic, Google and OpenAI to test their models before release. It has an open source platform called Inspect that permits companies, governments and academics to run standardised safety tests for AI usage. Among the works AISI has done is the reported detection of multiple serious vulnerabilities that could enable development of biological weapons; the vulnerabilities were fixed before the model was launched.
+It conducts research on diverse fields of AI application. One study by AISI found that LLMs post-trained for political persuasiveness became systematically less accurate and up to 51% more persuasive on political issues. AISI has also worked on the usage of AI for emotional needs. It found that nearly 10 percent of UK citizens used systems like chatbots for emotional purposes on a weekly basis. It found that "systems are now outperforming PhD-level researchers on scientific knowledge tests and helping non-experts succeed at lab work that would previously have been out of reach" in a report published in December 2025.
+Former chief AI officer of GCHQ Adam Beaumont is the institution's interim director. UK prime minister's AI advisor Jade Leung is the chief technology officer.
+
+
+== See also ==
+Alan Turing Institute, UK institute for data science and AI
+Artificial intelligence safety institute
+
+
+== References ==
+
+
+== External links ==
+Official website
